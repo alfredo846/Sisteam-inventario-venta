@@ -13,13 +13,9 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('users', function (Blueprint $table) {
-            $table->id();
+        Schema::create('marcas', function (Blueprint $table) {
+            $table->bigIncrements('marca_id');
             $table->string('nombre',50)->nullable();
-            $table->string('username',50)->nullable();
-            $table->string('email')->nullable()->unique();
-            $table->string('password');
-            $table->integer('tipo')->default(1);
             $table->smallInteger('estado')->default(1);
 
             $table->timestamps();
@@ -33,6 +29,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('users');
+        Schema::dropIfExists('marcas');
     }
 };
