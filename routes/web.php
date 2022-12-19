@@ -12,11 +12,12 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
-Route::apiResource('/api/marcas', 'MarcaController');
-Route::apiResource('/api/categorias', 'CategoriaController');
-Route::apiResource('/api/medidas', 'MedidaController');
-Route::apiResource('/api/productos', 'ProductoController');
+Route::group(['prefix'=>'api'],function(){
+    Route::apiResource('/marcas', 'MarcaController');
+    Route::apiResource('/categorias', 'CategoriaController');
+    Route::apiResource('/medidas', 'MedidaController');
+    Route::apiResource('/productos', 'ProductoController');
+});
 
 Route::get('/', function () {
     return view('welcome');
