@@ -14,7 +14,7 @@ class MedidaController extends Controller
      */
     public function index()
     {
-        //
+        return ['medidas'];
     }
 
     /**

@@ -15,6 +15,7 @@ class Medida extends Model
 
     protected $fillable = [
         'nombre',
+        'descripcion',
         'codigo',
         'estado',
     ];

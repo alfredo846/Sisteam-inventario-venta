@@ -14,6 +14,8 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::apiResource('/api/marcas', 'MarcaController');
+Route::apiResource('/api/categorias', 'CategoriaController');
+Route::apiResource('/api/medidas', 'MedidaController');
 
 Route::get('/', function () {
     return view('welcome');
