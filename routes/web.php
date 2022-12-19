@@ -13,6 +13,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Route::apiResource('/api/marcas', 'MarcaController');
+
 Route::get('/', function () {
     return view('welcome');
 });
