@@ -19,6 +19,7 @@ return new class extends Migration
             $table->string('descripcion',50)->nullable();
             $table->string('codigo',50)->nullable();
             $table->smallInteger('estado')->default(1);
+            
             $table->timestamps();
         });
     }
