@@ -14,7 +14,7 @@ class ProductoController extends Controller
      */
     public function index()
     {
-        return ['productos'];
+        return Producto::where('estado',1)->get();
     }
 
     /**
@@ -25,7 +25,22 @@ class ProductoController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $producto = new Producto();
+        $producto->nombre = $request->nombre;
+        $producto->descripcion = $request->descripcion;
+        $producto->codigo_barra = $request->codigo_barra;
+        $producto->medida_id = $request->medida_id;
+        $producto->marca_id = $request->marca_id;
+        $producto->categoria_id = $request->categoria_id;
+        $producto->precio_compra = $request->precio_compra;
+        $producto->precio_venta = $request->precio_venta;
+        $producto->stock_minimo = $request->stock_minimo;
+        $producto->stock_maximo = $request->stock_maximo;
+        $producto->imagen = $request->imagen;
+        $producto->save();
+
+        return $producto;
+
     }
 
     /**
