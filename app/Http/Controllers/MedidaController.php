@@ -25,7 +25,14 @@ class MedidaController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $Medida = new Medida();
+        $Medida->nombre = $request->nombre;
+        $Medida->descripcion = $request->descripcion;
+        $Medida->codigo = $request->codigo;
+        $Medida->save();
+
+        return $Medida;
+        
     }
 
     /**
