@@ -14,7 +14,7 @@ class CategoriaController extends Controller
      */
     public function index()
     {
-        return['categorias'];
+        return Categoria::where('estado',1)->get();
     }
 
     /**
@@ -41,7 +41,7 @@ class CategoriaController extends Controller
      */
     public function show(Categoria $categoria)
     {
-        //
+        return $categoria;
     }
 
     /**
@@ -53,7 +53,12 @@ class CategoriaController extends Controller
      */
     public function update(Request $request, Categoria $categoria)
     {
-        //
+        $categoria->nombre = $request->nombre;
+        $categoria->descripcion = $request->descripcion;
+        $categoria->estado = $request->estado;
+        $categoria->save();
+
+        return $categoria;
     }
 
     /**

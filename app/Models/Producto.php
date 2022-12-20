@@ -21,7 +21,7 @@ class Producto extends Model
         return $this->belongs(Categoria::class);
     }
 
-    protected $primarykey = "producto_id";
+    protected $primaryKey = "producto_id";
 
     protected $table = "productos";
 

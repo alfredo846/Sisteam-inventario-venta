@@ -14,7 +14,7 @@ class MedidaController extends Controller
      */
     public function index()
     {
-        return ['medidas'];
+        return Medida::where('estado',1)->get();
     }
 
     /**
@@ -43,7 +43,7 @@ class MedidaController extends Controller
      */
     public function show(Medida $medida)
     {
-        //
+        return $medida;
     }
 
     /**
@@ -55,7 +55,13 @@ class MedidaController extends Controller
      */
     public function update(Request $request, Medida $medida)
     {
-        //
+        $medida->nombre = $request->nombre;
+        $medida->descripcion = $request->descripcion;
+        $medida->codigo = $request->codigo;
+        $medida->estado = $request->estado;
+        $medida->save();
+
+        return $medida;
     }
 
     /**

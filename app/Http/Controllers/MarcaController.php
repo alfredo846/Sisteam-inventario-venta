@@ -14,7 +14,7 @@ class MarcaController extends Controller
      */
     public function index()
     {
-        return ['marcas'];
+        return Marca::where('estado',1)->get();
     }
 
     /**
@@ -29,7 +29,7 @@ class MarcaController extends Controller
         $Marca->nombre = $request->nombre;
         $Marca->descripcion = $request->descripcion;
         $Marca->save();
-        
+
         return $Marca;
     }
 
@@ -41,7 +41,7 @@ class MarcaController extends Controller
      */
     public function show(Marca $marca)
     {
-        //
+        return $marca;
     }
 
     /**
@@ -53,7 +53,12 @@ class MarcaController extends Controller
      */
     public function update(Request $request, Marca $marca)
     {
-        //
+        $marca->nombre = $request->nombre;
+        $marca->descripcion = $request->descripcion;
+        $marca->estado = $request->estado;
+        $marca->save();
+
+        return $marca;
     }
 
     /**

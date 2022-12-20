@@ -9,7 +9,7 @@ class Marca extends Model
 {
     use HasFactory;
 
-    protected $primarykey = "marca_id";
+    protected $primaryKey = "marca_id";
 
     protected $table = "marcas";
 
