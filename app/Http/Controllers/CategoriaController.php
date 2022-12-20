@@ -69,6 +69,9 @@ class CategoriaController extends Controller
      */
     public function destroy(Categoria $categoria)
     {
-        //
+        $categoria->estado = 0;
+        $categoria->save();
+
+        return $categoria;
     }
 }

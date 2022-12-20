@@ -72,6 +72,9 @@ class MedidaController extends Controller
      */
     public function destroy(Medida $medida)
     {
-        //
+        $medida->estado = 0;
+        $medida->save();
+        
+        return $medida;
     }
 }

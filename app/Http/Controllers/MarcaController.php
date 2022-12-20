@@ -69,6 +69,9 @@ class MarcaController extends Controller
      */
     public function destroy(Marca $marca)
     {
-        //
+        $marca->estado = 0;
+        $marca->save();
+
+        return $marca;
     }
 }
